@@ -39,12 +39,7 @@ $ git update-index --assume-unchanged web/.htaccess
 ### Environment Configuration Directory
 
 1. Add a directory with the environment name in `web/application/config`
-2. Copy of the config files with server specific values like `database.php`, `email.php` and `environment.php`
+2. Copy of the config files with server specific values like `database.php`, `email.php`, `custom.php` and `environment.php`
 3. Edit those files
 
 
-# Documentation
-
-For more information about using PHP on Heroku, see these Dev Center articles:
-
-- [PHP on Heroku](https://devcenter.heroku.com/categories/php)
