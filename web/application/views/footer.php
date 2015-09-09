@@ -1,12 +1,4 @@
 
-<?php if (isset($current_user) && $current_user->is(User_model::ROLE_ADMIN)) : ?>
-	<div class="container">
-		<ul id="footer_menu">
-			<li><a href="<?php echo site_url('welcome/todo'); ?>">To do</a></li>
-			<li><a href="<?php echo site_url('welcome/theme'); ?>">Theme</a></li>
-		</ul>
-	</div>
-<?php endif; ?>
 
 <!-- Modals -->
 <?php $this->load->view('modals/new_activity'); ?>
@@ -47,7 +39,19 @@
 <?php endif; ?>
 
 <?php if (defined('ENVIRONMENT') && in_array(ENVIRONMENT,array('development'))) $this->output->enable_profiler(TRUE); ?>
-    
-  </body>
-</html>
 
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-65707639-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+</body>
+</html>

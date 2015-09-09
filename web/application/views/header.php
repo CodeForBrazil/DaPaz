@@ -1,120 +1,88 @@
+<?php require 'data.php';?>
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="pt_BR">
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?php echo lang('app_site_name'); ?></title>
 
-	<link rel="stylesheet/less" type="text/css" href="<?php echo base_url('/assets/less/style.less'); ?>" />
-	<script src="<?php echo base_url('/assets/js/less.js'); ?>" type="text/javascript"></script>
-	
-    <script src="<?php echo base_url('/assets/js/jquery.min.js'); ?>"></script>	
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
 
-    <!-- Bootstrap -->
-    <link href="<?php echo base_url('/assets/css/bootstrap-theme.min.css'); ?>" rel="stylesheet">
-	<link href="<?php echo base_url('/assets/js/select2/select2.css'); ?>" rel="stylesheet"/>
-	<link href="<?php echo base_url('/assets/js/select2/select2-bootstrap.css'); ?>" rel="stylesheet"/>
+    <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <link rel="manifest" href="/manifest.json">
+
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- site description -->
+    <title>Ver o mapa do cartão transporte para os ônibus de Curitiba: onde emitir e carregar o seu cartão.</title>
+
+    <meta name="description" content="Que usuário de ônibus de Curitiba nunca se viu perdido sem saber onde recarregar seu cartão de transporte? Por isso criamos o Kartão, um mapa simples e intuitivo onde se pode consultar o local mais próximo de você para recarga ou compra do seu cartão transporte da cidade.">
+    <meta name="author" content="Kartao.com.br">
+    <meta name="keywords" content="cartão, transporte, onibus, curitiba, mapa, urbs, usuário, banca">
+
+    <!-- meta OG -->
+    <meta property="og:title" content="Ver o mapa do cartão transporte para os ônibus de Curitiba: onde emitir e carregar o seu cartão."/>
+    <meta property="og:site_name" content="Kartao.com.br"/>
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Que usuário de ônibus de Curitiba nunca se viu perdido sem saber onde recarregar seu cartão de transporte? Por isso criamos o Kartão, um mapa simples e intuitivo onde se pode consultar o local mais próximo de você para recarga ou compra do seu cartão transporte da cidade."/>
+    <?php $domain = isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : $_SERVER['SERVER_NAME'];?>
+    <meta property="og:url" content="http://kartao.com.br" />
+    <meta property="og:image" content="http://kartao.com.br/assets/img/kartao.jpg"/>
+
+    <!-- Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/stylish-portfolio.css" rel="stylesheet">
+    <link href="assets/css/kartao.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
-  <body>
-	<div class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a href="/" id="logo">
-          	<h1>PeaceLabs</h1>
-          	<h2 class="tsN fwR fsI show">Powered by #CheerForPeace</h2>
-          </a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav pull-right">
-          	<?php if (isset($current_user)) : ?>
-	          	<li class="dropdown hidden-xs">
-	              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $current_user->get_name(); ?><span class="caret"></span></a>
-	              <ul class="dropdown-menu dropdown-menu-right" role="menu">
-	                <li><a href="<?php echo site_url('user'); ?>"><?php echo lang('app_my_account'); ?></a></li>
-	                <li><a href="<?php echo site_url('user/settings'); ?>"><?php echo lang('app_parameters'); ?></a></li>
-	                <li><a href="<?php echo site_url('welcome/out'); ?>"><?php echo lang('app_disconnect'); ?></a></li>
-	              </ul>
-	          	</li>
-                <li class="visible-xs"><a href="<?php echo site_url('user'); ?>"><?php echo lang('app_my_account'); ?></a></li>
-                <li class="visible-xs"><a href="<?php echo site_url('user/settings'); ?>"><?php echo lang('app_parameters'); ?></a></li>
-                <li class="visible-xs"><a href="<?php echo site_url('welcome/out'); ?>"><?php echo lang('app_disconnect'); ?></a></li>
-          	<?php else : ?>
-              <li><a href="#register" data-toggle="modal" data-target="#registerModal"><?php echo lang('app_register'); ?></a></li>
-              <li><a href="#login" data-toggle="modal" data-target="#loginModal"><?php echo lang('app_connect'); ?></a></li>
-            <?php endif; ?>
-            
-            <?php 
-				$available_languages = $this->config->item('available_languages');
-            	$current_lang = $this->config->item('language');
-				$current_lang = array_search($current_lang, $available_languages);
-	            if ($current_lang && is_array($available_languages) && (count($available_languages)>1) ) : ?>
-              <li>
-              	<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              		<img src="<?php echo base_url('assets/img/flags/'.$current_lang.'.png'); ?>" height="20px;" />
-              		<span class="caret"></span>
-              	</a>
-          		<ul class="dropdown-menu dropdown-menu-right menu-lang" role="menu">
-		            <li>
-		            <?php foreach ( $available_languages as $lang => $name) : ?>
-		              <?php if ($lang != $current_lang) : ?>
-	            		<a href="?lang=<?php echo $lang; ?>" class="switch-lang">
-	            			<img src="<?php echo base_url('assets/img/flags/'.$lang.'.png'); ?>" height="20px;" />
-	            		</a>
-		              <?php endif; ?>
-		            <?php endforeach; ?>
-	            	</li>
-          		</ul>
-              </li>
-            	
-            <?php endif; ?>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
 
-	<?php if ( ! empty($errors)) : ?>
-	<div class="container">
-		<div class="alert alert-danger alert-dismissable">
-			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-			<?php foreach ($errors as $error) : ?>
-				<p><?php echo $error; ?></p>
-			<?php endforeach; ?>
-		</div>
-	</div>
-	<?php endif; ?>
-	
-	<?php if ( ! empty($messages)) : ?>
-	<div class="container">
-		<div class="alert alert-success alert-dismissable">
-			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-			<?php foreach ($messages as $message) : ?>
-				<p><?php echo $message; ?></p>
-			<?php endforeach; ?>
-		</div>
-	</div>
-	<?php endif; ?>
-	
-	<?php if ( ! empty($debug)) : ?>
-	<div class="container">
-		<div class="alert alert-warning alert-dismissable">
-			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-			<?php foreach ($debug as $key => $value) : ?>
-				<p><?php echo "<strong>$key</strong>: <br/>".json_encode($value); ?></p>
-			<?php endforeach; ?>
-		</div>
-	</div>
-	<?php endif; ?>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+    <script src="assets/js/app.js"></script>
+    <script>
+        document.postos = <?php echo json_encode($postos);?>;
+        document.vendas = <?php echo json_encode($vendas);?>;
+    </script>
+</head>
+<body>
+
+<div id="fb-root"></div>
+    <script>
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.4&appId=871255366303296";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script>

@@ -1,0 +1,219 @@
+/* RESET */
+li {
+    list-style: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+html, body { overflow: hidden; height: 100% }
+body { margin:0; padding:0; }
+
+/* STYLE */
+body {
+	color: #fff;
+	background-color: #333;
+	color: #4d4d4d;
+	font-family: 'Open Sans', sans-serif;
+	line-height: normal;
+}
+
+.gmnoprint a,
+.gmnoprint span,
+.gm-style-cc {
+    display:none;
+}
+
+/* ------------------------------------------------------------------- CANVAS */
+#map-canvas {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    color: #000;
+    z-index: 2;
+}
+
+/* ------------------------------------------------------------------- HEADER */
+.header {
+	background-image: none;
+}
+
+.header .logo {
+    position: absolute;
+    z-index: 11;
+    top: 15px;
+    left: 15px;
+}
+
+.header .title {
+	position:absolute;
+	top: 0;
+	left: 0;
+	width: 60%;
+	margin: 0 20%;
+	padding: 5px;
+	z-index: 1;
+	text-align: center;
+	background-color:rgba(0, 0, 0, 0.5);
+}
+
+.header .title h1 {
+    margin: 0;
+    font-size: 20px;
+    margin: 5px;
+}
+
+.header .title h2 {
+    margin: 0px;
+    font-size: 14px;
+}
+
+/* ------------------------------------------------------------------- PLACES */
+#places {
+	padding: 50px 0;
+	background-color: white;
+	color:#333;
+}
+
+#menu-toggle {
+    z-index: 10;
+}
+
+/* ------------------------------------------------------------------ SIDEBAR */
+#sidebar-wrapper {
+	background: white;
+	border-left: 1px solid #222;
+}
+
+#sidebar-wrapper a {
+	color: #222;
+}
+
+#sidebar-wrapper a:hover {
+	color: #999;
+}
+
+#sidebar-wrapper #menu-close { display: none; }
+
+#sidebar-wrapper .logo {
+	margin: 10px 10px 10px 0;
+	width: 80%
+}
+
+#sidebar-wrapper .brand{ text-align: center }
+
+#sidebar-wrapper .brand, #sidebar-wrapper .content {
+    padding: 0 10px 10px;
+}
+
+#sidebar-wrapper .content{
+    border-top: 2px dashed #ccc;
+    padding-top: 20px;
+}
+
+#sidebar-wrapper .content table{width: 100%;}
+
+#sidebar-wrapper .content table .image{ text-align: center;}
+
+#sidebar-wrapper .content h4 {
+    text-align: center;
+}
+
+#sidebar-wrapper .content .image{
+    text-align: center;
+}
+
+#sidebar-wrapper .content .row{
+    margin-bottom: 10px;
+}
+
+#sidebar-wrapper .brand h3 {
+    display: block;
+    width: 100%;
+    border-bottom: 1px dashed #ccc;
+    font-size: 16px;
+}
+
+#sidebar-wrapper .brand > div {
+	float: left;
+	margin: 10px 0;
+	line-height:inherit;
+}
+
+/* ------------------------------------------------------------------- FOOTER */
+#sidebar-wrapper .footer {
+	display: none;
+	position: absolute;
+    bottom: 0;
+    text-align: right;
+    width: 100%;
+    background-color: white;
+    font-size: 14px;
+}
+
+#sidebar-wrapper .footer .share {
+    padding: 10px;
+    border-top: 1px dashed #ccc;
+    height: 42px;
+}
+
+.fb-share-button, .twitter-share-button{
+    float: left;
+    margin-right: 10px;
+}
+
+#sidebar-wrapper .footer .references {
+	display: none;
+	border-top: 1px dashed #ccc;
+	padding: 10px;
+	clear: both;
+}
+
+#sidebar-wrapper .footer .block_cfc { display: none; }
+
+#sidebar-wrapper .footer .img_codeforcuritiba { width: 100%; max-width: 170px; }
+
+#sidebar-wrapper .footer .img_urbs {
+    width: 100%; max-width: 50px;
+    margin: 0 10px;
+}
+
+#sidebar-wrapper .footer table {
+	width: 100%;
+}
+
+@media(min-width:768px) {
+	.header { width: 70%; }
+
+	#sidebar-wrapper.active, #sidebar-wrapper {
+		margin-right: 0;
+		width: 30%;
+		right: 0;
+	}
+
+	#menu-close { display:none; }
+
+}
+
+@media(min-width: 850px) {
+	#sidebar-wrapper .brand { font-size: 1.2em; }
+	#sidebar-wrapper .brand h2 { font-size: 30px; }
+
+}
+
+@media(min-height: 470px) {
+	#sidebar-wrapper .footer .block_cfc { display: table; }
+}
+
+@media(min-height: 380px) {
+	#sidebar-wrapper .footer .references { display: block; }
+}
+
+
+@media(min-height: 310px) {
+	#sidebar-wrapper .footer { display: block; }
+}
