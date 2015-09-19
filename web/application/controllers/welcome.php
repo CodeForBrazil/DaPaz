@@ -8,8 +8,16 @@ class Welcome extends MY_Controller {
 	public function index()
 	{
 		if (isset($_GET['from'])) $this->set_data('open_modal','login');
-		$this->load->view('welcome/home',$this->get_data());
+		$this->load->view('landing/index',$this->get_data());
 	}
+
+        /**
+         * Map page.
+         */
+        public function map()
+        {
+                $this->load->view('welcome/map');
+        }
 
 	/**
 	 * Page displaying the current theme.

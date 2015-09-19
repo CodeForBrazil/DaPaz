@@ -39,6 +39,7 @@
 */
 
 $route['default_controller'] = "welcome";
+$route['map'] = "welcome/map";
 $route['404_override'] = '';
 
 
